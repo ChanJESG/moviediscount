@@ -10,6 +10,7 @@ package controlflow.moviediscount;
 import java.util.Scanner;
 
 public class MovieDiscount {
+    public static final double childDiscount = 60.0, seniorDiscount = 55.0;
 
     public static void main(String[] args) {
 
@@ -17,19 +18,13 @@ public class MovieDiscount {
 
         Scanner scanner = new Scanner (System.in);
         System.out.println("Please enter your age: ");
-
-        while (scanner.nextInt() < 0 || !scanner.hasNextInt()  ) {
-            System.out.println("Please input a valid age");
-            scanner.next();
-        }
-
         int age = scanner.nextInt();
 
 
         if(age >= 0 && age < 5)
-            System.out.println(calcDiscount(60, ticketPrice));
+            System.out.println(calcDiscount(childDiscount, ticketPrice));
         else if (age > 60)
-            System.out.println(calcDiscount(55, ticketPrice));
+            System.out.println(calcDiscount(seniorDiscount, ticketPrice));
         else if (age >= 5)
             System.out.println(calcDiscount(0, ticketPrice));
 
@@ -37,7 +32,7 @@ public class MovieDiscount {
 
     public static String calcDiscount(double discount, double price) {
         if (discount == 0)
-            return "No discount available.";
+            return String.format("Your ticket price is $%.2f", price);
 
         double result = price * (discount / 100);
         return String.format("Your new ticket price is %d%% of initial price ($%.2f): $%.2f", (int)discount, price, result);
