@@ -18,7 +18,7 @@ public class MovieDiscount {
         Scanner scanner = new Scanner (System.in);
         System.out.println("Please enter your age: ");
 
-        while (!scanner.hasNextInt()) {
+        while (scanner.nextInt() < 0 || !scanner.hasNextInt()  ) {
             System.out.println("Please input a valid age");
             scanner.next();
         }
