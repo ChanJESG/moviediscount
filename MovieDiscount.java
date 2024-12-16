@@ -17,6 +17,12 @@ public class MovieDiscount {
 
         Scanner scanner = new Scanner (System.in);
         System.out.println("Please enter your age: ");
+
+        while (!scanner.hasNextInt()) {
+            System.out.println("Please input a valid age");
+            scanner.next();
+        }
+
         int age = scanner.nextInt();
 
 
@@ -26,8 +32,7 @@ public class MovieDiscount {
             System.out.println(calcDiscount(55, ticketPrice));
         else if (age >= 5)
             System.out.println(calcDiscount(0, ticketPrice));
-        else
-            System.out.println("Please input a valid age.");
+
     }
 
     public static String calcDiscount(double discount, double price) {
