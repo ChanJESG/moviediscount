@@ -30,6 +30,13 @@ public class MovieDiscount {
 
     }
 
+
+    /**
+     * @param discount is of type double, to pass in the discount value
+     * @param price is of type double, to pass in the ticket price
+     * @return String value based on the computed results
+     */
+
     public static String calcDiscount(double discount, double price) {
         if (discount == 0)
             return String.format("Your ticket price is $%.2f", price);
