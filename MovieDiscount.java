@@ -35,6 +35,6 @@ public class MovieDiscount {
             return String.format("Your ticket price is $%.2f", price);
 
         double result = price * (discount / 100);
-        return String.format("Your new ticket price is %d%% of initial price ($%.2f): $%.2f", (int)discount, price, result);
+        return String.format("Your new ticket price is %.1f%% of initial price (%.2f euros): %.2f euros", discount, price, result);
     }
 }
